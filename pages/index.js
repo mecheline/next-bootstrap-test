@@ -30,7 +30,7 @@ export default function Home({ result }) {
 //   };
 // }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const client = await MongoClient.connect(
     "mongodb+srv://meche:meche.in@cluster0.j9fvny4.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -50,7 +50,7 @@ export const getServerSideProps = async () => {
         id: item._id.toString(),
         description: item.description,
       })),
-      // revalidate: 1,
+      revalidate: 1,
     },
   };
 };
