@@ -75,6 +75,6 @@ export const getStaticProps = async (context) => {
         id: results._id.toString(),
       },
     },
-    revalidate: 10,
+    revalidate: 1,
   };
 };
