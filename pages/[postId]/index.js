@@ -1,4 +1,3 @@
-
 import { MongoClient } from "mongodb";
 import { ObjectId } from "mongodb";
 import { PostDetails } from "../../components/postdetails/PostDetails";
@@ -76,5 +75,6 @@ export const getStaticProps = async (context) => {
         id: results._id.toString(),
       },
     },
+    revalidate: 10,
   };
 };
