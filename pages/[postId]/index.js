@@ -1,12 +1,9 @@
-import { useRouter } from "next/router";
+
 import { MongoClient } from "mongodb";
 import { ObjectId } from "mongodb";
 import { PostDetails } from "../../components/postdetails/PostDetails";
 
 export default function index({ data }) {
-  const router = useRouter();
-  const postId = router.query.postId;
-  console.log(postId);
   return <PostDetails data={data} />;
 }
 
