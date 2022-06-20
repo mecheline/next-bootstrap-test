@@ -50,7 +50,7 @@ export const getStaticProps = async () => {
         id: item._id.toString(),
         description: item.description,
       })),
-      revalidate: 1,
     },
+    revalidate: 1,
   };
 };
