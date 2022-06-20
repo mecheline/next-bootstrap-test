@@ -7,7 +7,7 @@ export const Post = ({ result }) => {
     <div className="row mt-5">
       {result.map((item) => {
         return (
-          <div className="col-sm-6 mb-3">
+          <div className="col-sm-6 mb-3" key={item._id}>
             <div className="card">
               <div className="card-body">
                 <h5 className="card-title">{item.title}</h5>
