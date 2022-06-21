@@ -22,7 +22,7 @@ export default function AddPost(props) {
     <div className={classes.details}>
       <form onSubmit={submitData} method="POST">
         <div className="mb-3">
-          <label for="title" className="form-label">
+          <label htmlFor="title" className="form-label">
             Title
           </label>
           <input
@@ -34,7 +34,7 @@ export default function AddPost(props) {
           />
         </div>
         <div className="mb-3">
-          <label for="author" className="form-label">
+          <label htmlFor="author" className="form-label">
             Author
           </label>
           <input
@@ -46,7 +46,7 @@ export default function AddPost(props) {
           />
         </div>
         <div className="mb-3">
-          <label for="date" className="form-label">
+          <label htmlFor="date" className="form-label">
             Date
           </label>
           <input
@@ -58,7 +58,7 @@ export default function AddPost(props) {
           />
         </div>
         <div className="mb-3">
-          <label for="exampleFormControlTextarea1" className="form-label">
+          <label htmlFor="exampleFormControlTextarea1" className="form-label">
             Description
           </label>
           <textarea
