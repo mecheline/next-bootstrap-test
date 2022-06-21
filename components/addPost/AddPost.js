@@ -16,6 +16,11 @@ export default function AddPost(props) {
       description,
     };
     props.addData(record);
+
+    setAuthor("");
+    setTitle("");
+    setDate("");
+    setDescription("");
   };
 
   return (
