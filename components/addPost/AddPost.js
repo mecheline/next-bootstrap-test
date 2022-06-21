@@ -8,7 +8,7 @@ export default function AddPost(props) {
   const [description, setDescription] = useState("");
 
   const submitData = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const record = {
       title,
       author,
@@ -21,55 +21,55 @@ export default function AddPost(props) {
   return (
     <div className={classes.details}>
       <form onSubmit={submitData} method="POST">
-        <div class="mb-3">
-          <label for="title" class="form-label">
+        <div className="mb-3">
+          <label for="title" className="form-label">
             Title
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label for="author" class="form-label">
+        <div className="mb-3">
+          <label for="author" className="form-label">
             Author
           </label>
           <input
             type="text"
-            class="form-control"
+            className="form-control"
             id="author"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label for="date" class="form-label">
+        <div className="mb-3">
+          <label for="date" className="form-label">
             Date
           </label>
           <input
             type="date"
-            class="form-control"
+            className="form-control"
             id="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
           />
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">
+        <div className="mb-3">
+          <label for="exampleFormControlTextarea1" className="form-label">
             Description
           </label>
           <textarea
-            class="form-control"
+            className="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Primary
         </button>
       </form>
