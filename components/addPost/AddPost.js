@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import classes from "./AddPost.module.css";
+import { useRouter } from "next/router";
 
 export default function AddPost(props) {
+  const router = useRouter();
+
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [date, setDate] = useState();
@@ -21,6 +24,8 @@ export default function AddPost(props) {
     setTitle("");
     setDate("");
     setDescription("");
+
+    router.push("/");
   };
 
   return (
