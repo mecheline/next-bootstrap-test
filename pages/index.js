@@ -30,7 +30,7 @@ export default function Home({ result }) {
 //   };
 // }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ req, res }) => {
   const client = await MongoClient.connect(
     "mongodb+srv://meche:meche.in@cluster0.j9fvny4.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -40,6 +40,11 @@ export const getServerSideProps = async () => {
   const results = await record.find().toArray();
   console.log(results);
   client.close();
+
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
 
   return {
     props: {

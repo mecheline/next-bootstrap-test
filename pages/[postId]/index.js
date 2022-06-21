@@ -54,7 +54,7 @@ export default function index({ data }) {
 //   };
 // }
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async (context, { req, res }) => {
   const postId = context.params.postId;
   const client = await MongoClient.connect(
     "mongodb+srv://meche:meche.in@cluster0.j9fvny4.mongodb.net/?retryWrites=true&w=majority"
@@ -64,6 +64,11 @@ export const getServerSideProps = async (context) => {
   const results = await record.findOne({ _id: ObjectId(postId) });
   console.log(results);
   client.close();
+
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
 
   return {
     props: {
