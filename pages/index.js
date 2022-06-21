@@ -51,6 +51,6 @@ export const getServerSideProps = async () => {
         description: item.description,
       })),
     },
-    revalidate: 1,
+    // revalidate: 1,
   };
 };
