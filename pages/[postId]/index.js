@@ -23,21 +23,21 @@ export default function index({ data }) {
 //   };
 // }
 
-export const getStaticPaths = async () => {
-  const client = await MongoClient.connect(
-    "mongodb+srv://meche:meche.in@cluster0.j9fvny4.mongodb.net/?retryWrites=true&w=majority"
-  );
-  const db = client.db();
-  const record = db.collection("books");
-  const results = await record.find({}, { _id: 1 }).toArray();
+// export const getStaticPaths = async () => {
+//   const client = await MongoClient.connect(
+//     "mongodb+srv://meche:meche.in@cluster0.j9fvny4.mongodb.net/?retryWrites=true&w=majority"
+//   );
+//   const db = client.db();
+//   const record = db.collection("books");
+//   const results = await record.find({}, { _id: 1 }).toArray();
 
-  return {
-    fallback: true,
-    paths: results.map((result) => ({
-      params: { postId: result._id.toString() },
-    })),
-  };
-};
+//   return {
+//     fallback: true,
+//     paths: results.map((result) => ({
+//       params: { postId: result._id.toString() },
+//     })),
+//   };
+// };
 
 // export async function getStaticProps(context) {
 //   const postId = context.params.postId;
