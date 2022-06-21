@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
   const results = await record.find({}, { _id: 1 }).toArray();
 
   return {
-    fallback: false,
+    fallback: true,
     paths: results.map((result) => ({
       params: { postId: result._id.toString() },
     })),
